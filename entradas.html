@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entradas | Solar Festival Medellín 2025</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body>
+  <header>
+    <img src="img/logo_solarfestival.png" alt="Logo Solar Festival" class="logo"/>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="artistas.html">Artistas</a></li>
+        <li><a href="logistica.html">Logística</a></li>
+        <li><a href="entradas.html" class="activo">Entradas</a></li>
+        <li><a href="galeria.html">Galería</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="checkout">
+      <!-- Navegación de pasos -->
+      <div class="wizard-nav">
+        <div class="wizard-step active" data-step="1">1. Selección</div>
+        <div class="wizard-step"      data-step="2">2. Datos</div>
+        <div class="wizard-step"      data-step="3">3. Confirmación</div>
+      </div>
+
+      <!-- Formulario wizard -->
+      <form id="checkout-form">
+        <!-- Paso 1: Selección de entrada -->
+        <div class="wizard-content" data-step="1">
+          <h2>Selecciona tu entrada</h2>
+          <label><input type="radio" name="ticketType" value="general" checked> General 3 Días – $200.000 COP</label><br>
+          <label><input type="radio" name="ticketType" value="vip"> VIP 3 Días – $350.000 COP</label><br>
+          <label><input type="radio" name="ticketType" value="day"> Un Día – $80.000 COP</label>
+        </div>
+
+        <!-- Paso 2: Datos de contacto -->
+        <div class="wizard-content d-none" data-step="2">
+          <h2>Tus datos</h2>
+          <div class="form-group">
+            <label for="fullName">Nombre completo</label>
+            <input type="text" id="fullName" name="fullName" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="quantity">Cantidad</label>
+            <input type="number" id="quantity" name="quantity" min="1" value="1" required>
+          </div>
+        </div>
+
+        <!-- Paso 3: Resumen y confirmación -->
+        <div class="wizard-content d-none" data-step="3">
+          <h2>Resumen de tu pedido</h2>
+          <ul id="summary-list"></ul>
+          <p class="total">Total: <span id="total-amount">0</span> COP</p>
+        </div>
+
+        <!-- Botones Next / Prev -->
+        <div class="wizard-buttons">
+          <button type="button" class="btn btn--secondary" id="prev-btn" disabled>Anterior</button>
+          <button type="button" class="btn btn--primary"   id="next-btn">Siguiente</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Solar Festival. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
